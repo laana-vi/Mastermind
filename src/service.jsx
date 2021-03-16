@@ -1,5 +1,5 @@
-export const randomNumber = () => {
-    return Math.round(Math.floor(Math.random() * 5 + 1))
+export const randomNumber = (number) => {
+    return Math.round(Math.floor(Math.random() * number + 1))
 }
 
 export const mastermind = (attempt, solution) => {

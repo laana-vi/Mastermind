@@ -1,26 +1,26 @@
 import { useEffect, useState } from "react"
 import { mastermind } from "../service"
-import { buttons } from "../variables/buttons"
+import { codePegs } from "../variables/codePegs"
 
-const Buttons = ({ setAttempt, attempt, solution, setChecks, setPics, setAttempts, setCheck }) => {
+const CodePegs = ({ setAttempt, attempt, solution, setAllSolutionChecks, setPegs, setCurrentAttempts, setSolutionCheck }) => {
     const [clicks, setClicks] = useState(0)
 
 
     useEffect(() => {
         if (clicks === 4) {
-            setChecks(pv => [...pv, mastermind(attempt, solution)])
-            setCheck(mastermind(attempt, solution))
+            setAllSolutionChecks(pv => [...pv, mastermind(attempt, solution)])
+            setSolutionCheck(mastermind(attempt, solution))
             setClicks(0)
             setAttempt([])
-            setAttempts(pv => pv + 1)
+            setCurrentAttempts(pv => pv + 1)
         }
-    }, [setClicks, setAttempt, attempt, clicks, solution, setChecks, setAttempts, setCheck])
+    }, [setClicks, setAttempt, attempt, clicks, solution, setAllSolutionChecks, setCurrentAttempts, setSolutionCheck])
 
     const handleClick = (number) => {
         if (clicks <= 4) {
             setClicks(pv => pv + 1)
             setAttempt(pv => [...pv, number])
-            setPics(pv => [...pv, buttons[number]])
+            setPegs(pv => [...pv, codePegs[number]])
 
         }
     }
@@ -35,4 +35,4 @@ const Buttons = ({ setAttempt, attempt, solution, setChecks, setPics, setAttempt
     )
 }
 
-export default Buttons
+export default CodePegs

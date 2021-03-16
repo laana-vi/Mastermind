@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react"
-import { buttons } from "../variables/buttons"
+import { codePegs } from "../variables/codePegs"
 
-const Solution = ({solution, attempts, check}) => {
+const Solution = ({solution, currentAttempt, solutionCheck}) => {
     let key = 0
-    const [solutionPics, setSolutionPics] = useState([])
+    const [solutionPegs, setSolutionPegs] = useState([])
 
     useEffect(() => {
-        if(attempts===8 || check.exact === 4){
-            setSolutionPics([buttons[solution[0]], buttons[solution[1]], buttons[solution[2]], buttons[solution[3]] ])
+        if(currentAttempt===8 || solutionCheck.exact === 4){
+            setSolutionPegs([codePegs[solution[0]], codePegs[solution[1]], codePegs[solution[2]], codePegs[solution[3]] ])
         }
-    }, [attempts, solution, check])
+    }, [currentAttempt, solution, solutionCheck])
     return(
         <div>
-            {solutionPics.map(pic => <img src={pic} key={key++} alt="" />)}
+            {solutionPegs.map(peg => <img src={peg} key={key++} alt="" />)}
         </div>
     )
 }
