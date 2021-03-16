@@ -35,3 +35,4 @@ export const mastermind = (attempt, solution) => {
     }
     return { 'exact': exact, 'wrongPlace': wrongPlace }
 }
+

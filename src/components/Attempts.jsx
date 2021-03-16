@@ -1,10 +1,9 @@
 const Attempts = ({ pegs }) => {
-    let key=0
+    let key = 0
     return (
         <>
-
             <div>
-                {pegs?.slice(0, 4)?.map(pic  => <img key={key++} src={pic} alt="" />)}
+                {pegs?.slice(0, 4)?.map(pic => <img key={key++} src={pic} alt="" />)}
             </div>
             <div>
                 {pegs?.slice(4, 8)?.map(pic => <img key={key++} src={pic} alt="" />)}
