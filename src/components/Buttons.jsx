@@ -2,20 +2,22 @@ import { useEffect, useState } from "react"
 import { mastermind } from "../service"
 import { buttons } from "../variables/buttons"
 
-const Buttons = ({ setAttempt, attempt, solution, setChecks, setPics }) => {
+const Buttons = ({ setAttempt, attempt, solution, setChecks, setPics, setAttempts, setCheck }) => {
     const [clicks, setClicks] = useState(0)
-  
+
 
     useEffect(() => {
-        if (clicks === 5) {
+        if (clicks === 4) {
             setChecks(pv => [...pv, mastermind(attempt, solution)])
+            setCheck(mastermind(attempt, solution))
             setClicks(0)
             setAttempt([])
+            setAttempts(pv => pv + 1)
         }
-    }, [setClicks, setAttempt, attempt, clicks, solution, setChecks])
+    }, [setClicks, setAttempt, attempt, clicks, solution, setChecks, setAttempts, setCheck])
 
     const handleClick = (number) => {
-        if (clicks <= 5) {
+        if (clicks <= 4) {
             setClicks(pv => pv + 1)
             setAttempt(pv => [...pv, number])
             setPics(pv => [...pv, buttons[number]])

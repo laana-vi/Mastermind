@@ -21,7 +21,6 @@ const Checker = ({ checks }) => {
 
     return (
         <>
-        {console.log(checks)}
             <div>
                 {renderExact(checks[0]?.exact).map(pic => <img src={pic} alt="" key={key++} />)}
                 {renderWrongPlace(checks[0]?.wrongPlace).map(pic => <img src={pic} alt="" key={key++} />)}
