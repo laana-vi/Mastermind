@@ -1,7 +1,11 @@
 const Attempts = ({ attempts }) => {
+
+    
+
     let key = 0
     return (
         <>
+
             <div>
                 {attempts?.slice(0, 5)?.map(char => <span key={key++}>{char}</span>)}
             </div>

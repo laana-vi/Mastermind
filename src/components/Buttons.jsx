@@ -1,19 +1,16 @@
 import { useEffect, useState } from "react"
 import { mastermind } from "../service"
 
-const Buttons = ({ setAttempt, attempt, solution, setAttempts }) => {
+const Buttons = ({ setAttempt, attempt, solution, setAttempts, setChecks }) => {
     const [clicks, setClicks] = useState(0)
-    let buttons = [1, 2, 3, 4, 5]
 
     useEffect(() => {
         if (clicks === 5) {
-            console.log(mastermind(attempt, solution))
-            console.log(attempt)
-            console.log(solution)
+            setChecks(pv => [...pv, mastermind(attempt, solution)])
             setClicks(0)
             setAttempt([])
         }
-    }, [setClicks, setAttempt, attempt, clicks, solution])
+    }, [setClicks, setAttempt, attempt, clicks, solution, setChecks])
 
     const handleClick = (number) => {
         if (clicks <= 5) {
@@ -25,7 +22,11 @@ const Buttons = ({ setAttempt, attempt, solution, setAttempts }) => {
     }
     return (
         <div>
-            {buttons.map(number => <button onClick={() => { handleClick(number) }} key={number}>{number}</button>)}
+            <button onClick={() => { handleClick(1) }}><img src='https://res.cloudinary.com/dpj7zvqzs/image/upload/v1615857543/purple_jfe2ov.png' alt="" /></button>
+            <button onClick={() => { handleClick(2) }}><img src='https://res.cloudinary.com/dpj7zvqzs/image/upload/v1615857543/pink_h52z9n.png' alt="" /></button>
+            <button onClick={() => { handleClick(3) }}><img src='https://res.cloudinary.com/dpj7zvqzs/image/upload/v1615857543/green_uv7agj.png' alt="" /></button>
+            <button onClick={() => { handleClick(4) }}><img src='https://res.cloudinary.com/dpj7zvqzs/image/upload/v1615857543/blue_hkvrpv.png' alt="" /></button>
+            <button onClick={() => { handleClick(5) }}><img src='https://res.cloudinary.com/dpj7zvqzs/image/upload/v1615857543/yellow_nqtkb0.png' alt="" /></button>
         </div>
     )
 }
