@@ -1,34 +1,31 @@
-const Attempts = ({ attempts }) => {
-
-    
-
-    let key = 0
+const Attempts = ({ pics }) => {
+    let key=0
     return (
         <>
 
             <div>
-                {attempts?.slice(0, 5)?.map(char => <span key={key++}>{char}</span>)}
+                {pics?.slice(0, 5)?.map(pic  => <img key={key++} src={pic} alt="" />)}
             </div>
             <div>
-                {attempts?.slice(5, 10)?.map(char => <span key={key++}>{char}</span>)}
+                {pics?.slice(5, 10)?.map(pic => <img key={key++} src={pic} alt="" />)}
             </div>
             <div>
-                {attempts?.slice(10, 15)?.map(char => <span key={key++}>{char}</span>)}
+                {pics?.slice(10, 15)?.map(pic => <img key={key++} src={pic} alt="" />)}
             </div>
             <div>
-                {attempts?.slice(15, 20)?.map(char => <span key={key++}>{char}</span>)}
+                {pics?.slice(15, 20)?.map(pic => <img key={key++} src={pic} alt="" />)}
             </div>
             <div>
-                {attempts?.slice(20, 25)?.map(char => <span key={key++}>{char}</span>)}
+                {pics?.slice(20, 25)?.map(pic => <img key={key++} src={pic} alt="" />)}
             </div>
             <div>
-                {attempts?.slice(25, 30)?.map(char => <span key={key++}>{char}</span>)}
+                {pics?.slice(25, 30)?.map(pic => <img key={key++} src={pic} alt="" />)}
             </div>
             <div>
-                {attempts?.slice(30, 35)?.map(char => <span key={key++}>{char}</span>)}
+                {pics?.slice(30, 35)?.map(pic => <img key={key++} src={pic} alt="" />)}
             </div>
             <div>
-                {attempts?.slice(35, 40)?.map(char => <span key={key++}>{char}</span>)}
+                {pics?.slice(35, 40)?.map(pic => <img key={key++} src={pic} alt="" />)}
             </div>
         </>
     )
