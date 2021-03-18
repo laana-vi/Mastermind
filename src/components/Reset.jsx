@@ -1,6 +1,6 @@
 import { randomNumber } from "../service"
 
-const Reset = ({ reset, setSolution, setAllSolutionChecks, setCurrentAttempts, setSolutionCheck, setPegs, setReset, setSolutionPegs, startStopwatch }) => {
+const Reset = ({ reset, setSolution, setAllSolutionChecks, setCurrentAttempts, setSolutionCheck, setPegs, setReset, setSolutionPegs, startStopwatch, setWin }) => {
 
     const handleClick = () => {
         setSolution([randomNumber(5), randomNumber(5), randomNumber(5), randomNumber(5)])
@@ -11,6 +11,7 @@ const Reset = ({ reset, setSolution, setAllSolutionChecks, setCurrentAttempts, s
         setReset(false)
         setSolutionPegs([])
         startStopwatch()
+        setWin(null)
     }
     return (
         <div>
