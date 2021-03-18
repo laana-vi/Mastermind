@@ -1,16 +1,23 @@
 import { randomNumber } from "../service"
 
-const StartGame = ({ start, setSolution, setPegs, setStart, startStopwatch }) => {
+const StartGame = ({ start, setSolution, setPegs, setStart, startStopwatch, pegsInGame, setPegsInGame }) => {
 
     const handleClick = () => {
-        setSolution([randomNumber(5), randomNumber(5), randomNumber(5), randomNumber(5)])
+        let solutionPegsArr = []
+        for (let i = 0; i < pegsInGame; i++) {
+            solutionPegsArr.push(randomNumber(pegsInGame+1))
+        }
+        setSolution(solutionPegsArr)
         setPegs([])
         setStart(false)
         startStopwatch()
     }
     return (
         <div>
-            {start && <button onClick={() => handleClick()}>Start New Game</button>}
+            <button onClick={() => setPegsInGame(3)}>EASY</button>
+            <button onClick={() => setPegsInGame(4)}>NORMAL</button>
+            <button onClick={() => setPegsInGame(5)}>HARD</button>
+            {pegsInGame && <button onClick={() => handleClick()}>Start New Game</button>}
         </div>
     )
 }

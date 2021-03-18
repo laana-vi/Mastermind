@@ -1,31 +1,27 @@
-const Attempts = ({ pegs }) => {
+import { useEffect, useState } from "react"
+
+const Attempts = ({ pegs, attempts, pegsInGame }) => {
+    const [sliceStarts, setSliceStart] = useState([])
     let key = 0
+
+    useEffect(() => {
+        let attemptsArr = []
+        for (let i = 0; i <= attempts * pegsInGame - pegsInGame; i = i + pegsInGame) {
+            attemptsArr.push(i)
+        }
+        setSliceStart(attemptsArr)
+    }, [setSliceStart, attempts, pegsInGame])
+
+    const showAttempts = () => {
+        return sliceStarts.map(slice =>
+            <div key={slice}>
+                {pegs?.slice(slice, slice + pegsInGame)?.map(pic => <img key={key++} src={pic} alt="" />)}
+            </div>)
+    }
+
     return (
         <>
-            <div>
-                {pegs?.slice(0, 4)?.map(pic => <img key={key++} src={pic} alt="" />)}
-            </div>
-            <div>
-                {pegs?.slice(4, 8)?.map(pic => <img key={key++} src={pic} alt="" />)}
-            </div>
-            <div>
-                {pegs?.slice(8, 12)?.map(pic => <img key={key++} src={pic} alt="" />)}
-            </div>
-            <div>
-                {pegs?.slice(12, 16)?.map(pic => <img key={key++} src={pic} alt="" />)}
-            </div>
-            <div>
-                {pegs?.slice(16, 20)?.map(pic => <img key={key++} src={pic} alt="" />)}
-            </div>
-            <div>
-                {pegs?.slice(20, 24)?.map(pic => <img key={key++} src={pic} alt="" />)}
-            </div>
-            <div>
-                {pegs?.slice(24, 28)?.map(pic => <img key={key++} src={pic} alt="" />)}
-            </div>
-            <div>
-                {pegs?.slice(28, 32)?.map(pic => <img key={key++} src={pic} alt="" />)}
-            </div>
+            {showAttempts()}
         </>
     )
 }

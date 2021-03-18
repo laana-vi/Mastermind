@@ -1,8 +1,8 @@
 import { keyPegs } from "../variables/keyPegs"
 
-
-const KeyPegs = ({ allSolutionChecks }) => {
+const KeyPegs = ({ allSolutionChecks, attempts }) => {
     let key = 0
+
     const renderExact = (number) => {
         let exactPics = []
         for (let i = 1; i <= number; i++) {
@@ -19,40 +19,21 @@ const KeyPegs = ({ allSolutionChecks }) => {
         return wrongPlacePics
     }
 
+    const showKeyPegs = () => {
+        let attemptsArr = []
+        for (let i = 0; i < attempts; i++) {
+            attemptsArr.push(i)
+        }
+        return attemptsArr.map(attempt =>
+            <div key={attempt}>
+                {renderExact(allSolutionChecks[attempt]?.exact).map(pic => <img src={pic} alt="" key={key++} />)}
+                {renderWrongPlace(allSolutionChecks[attempt]?.wrongPlace).map(pic => <img src={pic} alt="" key={key++} />)}
+            </div>)
+    }
+
     return (
         <>
-            <div>
-                {renderExact(allSolutionChecks[0]?.exact).map(pic => <img src={pic} alt="" key={key++} />)}
-                {renderWrongPlace(allSolutionChecks[0]?.wrongPlace).map(pic => <img src={pic} alt="" key={key++} />)}
-            </div>
-            <div>
-                {renderExact(allSolutionChecks[1]?.exact).map(pic => <img src={pic} alt="" key={key++} />)}
-                {renderWrongPlace(allSolutionChecks[1]?.wrongPlace).map(pic => <img src={pic} alt="" key={key++} />)}
-            </div>
-            <div>
-                {renderExact(allSolutionChecks[2]?.exact).map(pic => <img src={pic} alt="" key={key++} />)}
-                {renderWrongPlace(allSolutionChecks[2]?.wrongPlace).map(pic => <img src={pic} alt="" key={key++} />)}
-            </div>
-            <div>
-                {renderExact(allSolutionChecks[3]?.exact).map(pic => <img src={pic} alt="" key={key++} />)}
-                {renderWrongPlace(allSolutionChecks[3]?.wrongPlace).map(pic => <img src={pic} alt="" key={key++} />)}
-            </div>
-            <div>
-                {renderExact(allSolutionChecks[4]?.exact).map(pic => <img src={pic} alt="" key={key++} />)}
-                {renderWrongPlace(allSolutionChecks[4]?.wrongPlace).map(pic => <img src={pic} alt="" key={key++} />)}
-            </div>
-            <div>
-                {renderExact(allSolutionChecks[5]?.exact).map(pic => <img src={pic} alt="" key={key++} />)}
-                {renderWrongPlace(allSolutionChecks[5]?.wrongPlace).map(pic => <img src={pic} alt="" key={key++} />)}
-            </div>
-            <div>
-                {renderExact(allSolutionChecks[6]?.exact).map(pic => <img src={pic} alt="" key={key++} />)}
-                {renderWrongPlace(allSolutionChecks[6]?.wrongPlace).map(pic => <img src={pic} alt="" key={key++} />)}
-            </div>
-            <div>
-                {renderExact(allSolutionChecks[7]?.exact).map(pic => <img src={pic} alt="" key={key++} />)}
-                {renderWrongPlace(allSolutionChecks[7]?.wrongPlace).map(pic => <img src={pic} alt="" key={key++} />)}
-            </div>
+            {showKeyPegs()}
         </>
     )
 }

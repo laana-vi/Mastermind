@@ -1,9 +1,13 @@
 import { randomNumber } from "../service"
 
-const Reset = ({ reset, setSolution, setAllSolutionChecks, setCurrentAttempts, setSolutionCheck, setPegs, setReset, setSolutionPegs, startStopwatch, setWin }) => {
+const Reset = ({ reset, setSolution, setAllSolutionChecks, setCurrentAttempts, setSolutionCheck, setPegs, setReset, setSolutionPegs, startStopwatch, setWin, pegsInGame, setPegsInGame }) => {
 
     const handleClick = () => {
-        setSolution([randomNumber(5), randomNumber(5), randomNumber(5), randomNumber(5)])
+        let solutionPegsArr = []
+        for (let i = 0; i < pegsInGame; i++) {
+            solutionPegsArr.push(randomNumber(pegsInGame + 1))
+        }
+        setSolution(solutionPegsArr)
         setAllSolutionChecks([])
         setCurrentAttempts(0)
         setSolutionCheck({})
@@ -15,7 +19,18 @@ const Reset = ({ reset, setSolution, setAllSolutionChecks, setCurrentAttempts, s
     }
     return (
         <div>
-            {reset && <button onClick={() => handleClick()}>New Game</button>}
+            {
+                !pegsInGame &&
+                <>
+                    <button onClick={() => setPegsInGame(3)}>EASY</button>
+                    <button onClick={() => setPegsInGame(4)}>NORMAL</button>
+                    <button onClick={() => setPegsInGame(5)}>HARD</button>
+                </>
+            }
+            {reset && pegsInGame
+                &&
+                <button onClick={() => handleClick()}>New Game</button>
+            }
         </div>
     )
 }
