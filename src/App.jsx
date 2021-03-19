@@ -90,8 +90,7 @@ const App = () => {
           <div className='game'>
             {win !== null && (win === true ? <p>GAME WON</p> : <p>GAME LOST</p>)}
             <StopWatch time={time} />
-            <Reset stopStopwatch={stopStopwatch} setPegsInGame={setPegsInGame} pegsInGame={pegsInGame} reset={reset} setWin={setWin} setSolution={setSolution} setAllSolutionChecks={setAllSolutionChecks} setCurrentAttempts={setCurrentAttempts} setSolutionCheck={setSolutionCheck} setPegs={setPegs} setReset={setReset} setSolutionPegs={setSolutionPegs} startStopwatch={startStopwatch} />
-            <CodePegs pegsInGame={pegsInGame} setAttempt={setAttempt} attempt={attempt} solution={solution} setAllSolutionChecks={setAllSolutionChecks} setPegs={setPegs} setCurrentAttempts={setCurrentAttempts} setSolutionCheck={setSolutionCheck} />
+            <Reset reset={reset} />
             <Solution solution={solution} currentAttempt={currentAttempt} solutionCheck={solutionCheck} setReset={setReset} setSolution={setSolution} solutionPegs={solutionPegs} setSolutionPegs={setSolutionPegs} stopStopwatch={stopStopwatch} />
             <div className="pegs">
               <div className="atempts">
@@ -101,7 +100,7 @@ const App = () => {
                 <KeyPegs attempts={attempts} allSolutionChecks={allSolutionChecks} />
               </div>
             </div>
-
+            <CodePegs pegsInGame={pegsInGame} setAttempt={setAttempt} attempt={attempt} solution={solution} setAllSolutionChecks={setAllSolutionChecks} setPegs={setPegs} setCurrentAttempts={setCurrentAttempts} setSolutionCheck={setSolutionCheck} />
           </div>
         </>
       }

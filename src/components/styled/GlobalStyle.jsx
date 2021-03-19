@@ -10,8 +10,8 @@ body {
     color: #ebe8e5;
     background-color:#272D2D;
 }
-img {
-    width: 50px
+button:focus {
+    outline: none;
 }
 .wrapper {
     

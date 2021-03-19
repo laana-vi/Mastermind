@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { mastermind } from "../service"
 import { codePegs } from "../variables/codePegs"
+import { StyledCodePegs } from "./styled/StyledCodePegs"
 
 const CodePegs = ({ setAttempt, attempt, solution, setAllSolutionChecks, setPegs, setCurrentAttempts, setSolutionCheck, pegsInGame }) => {
     const [clicks, setClicks] = useState(0)
@@ -29,12 +30,15 @@ const CodePegs = ({ setAttempt, attempt, solution, setAllSolutionChecks, setPegs
         for (let i = 1; i <= pegsInGame + 1; i++) {
             visiblePegs.push(i)
         }
-        return visiblePegs.map(visiblePeg => <button key={visiblePeg} onClick={() => { handleClick(visiblePeg) }}><img src={codePegs[visiblePeg]} alt="" /></button>
+        return visiblePegs.map(visiblePeg => <button className='code-peg-button' key={visiblePeg} onClick={() => { handleClick(visiblePeg) }}><img src={codePegs[visiblePeg]} alt="" /></button>
         )
     }
     return (
         <div>
-            {renderPegs()}
+            <StyledCodePegs>
+                {renderPegs()}
+            </StyledCodePegs>
+
         </div>
     )
 }

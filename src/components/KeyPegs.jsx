@@ -1,4 +1,5 @@
 import { keyPegs } from "../variables/keyPegs"
+import { StyledKeyPegs } from "./styled/StyledKeyPegs"
 
 const KeyPegs = ({ allSolutionChecks, attempts }) => {
     let key = 0
@@ -25,7 +26,7 @@ const KeyPegs = ({ allSolutionChecks, attempts }) => {
             attemptsArr.push(i)
         }
         return attemptsArr.map(attempt =>
-            <div key={attempt}>
+            <div className="key-pegs" key={attempt}>
                 {renderExact(allSolutionChecks[attempt]?.exact).map(pic => <img src={pic} alt="" key={key++} />)}
                 {renderWrongPlace(allSolutionChecks[attempt]?.wrongPlace).map(pic => <img src={pic} alt="" key={key++} />)}
             </div>)
@@ -33,7 +34,10 @@ const KeyPegs = ({ allSolutionChecks, attempts }) => {
 
     return (
         <>
-            {showKeyPegs()}
+            <StyledKeyPegs>
+                {showKeyPegs()}
+            </StyledKeyPegs>
+
         </>
     )
 }
