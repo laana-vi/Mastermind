@@ -26,8 +26,12 @@ img {
 }
 .game {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
+}
+.pegs {
+    display: flex;
+    flex-direction: row;
 }
 .bg {
   position: fixed;

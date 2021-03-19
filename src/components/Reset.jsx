@@ -1,6 +1,6 @@
 import { randomNumber } from "../service"
 
-const Reset = ({ reset, setSolution, setAllSolutionChecks, setCurrentAttempts, setSolutionCheck, setPegs, setReset, setSolutionPegs, startStopwatch, setWin, pegsInGame, setPegsInGame }) => {
+const Reset = ({ reset, setSolution, setAllSolutionChecks, setCurrentAttempts, setSolutionCheck, setPegs, setReset, setSolutionPegs, startStopwatch, stopStopwatch, setWin, pegsInGame, setPegsInGame }) => {
 
     const handleClick = () => {
         let solutionPegsArr = []
@@ -14,6 +14,7 @@ const Reset = ({ reset, setSolution, setAllSolutionChecks, setCurrentAttempts, s
         setPegs([])
         setReset(false)
         setSolutionPegs([])
+        stopStopwatch()
         startStopwatch()
         setWin(null)
     }

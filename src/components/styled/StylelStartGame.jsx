@@ -24,19 +24,30 @@ export const StyledStartGame = styled.div`
     margin: 20px;
     border-radius: 10px;
     border: none;
+    display: inline-block;
+    transform: translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+.levels button:hover {
+    transform: scale(1.1)
+
+}
+.start{
+    background-color: #3ba484 !important;
 }
 .levels button:nth-child(1){
     background-color: #ce1584;
 }
 .levels button:nth-child(2){
     background-color: #ec6a21;
+  
 }
 .levels button:nth-child(3){
     background-color: #d9d721;
+    
 }
-.levels button:nth-child(4){
-    background-color: #3ba484;
-}
+
 .logo {
     margin-top: 10px;
     width: 600px;
