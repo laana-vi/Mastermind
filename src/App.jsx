@@ -6,6 +6,7 @@ import Reset from "./components/Reset";
 import Solution from "./components/Solution";
 import StartGame from "./components/StartGame";
 import StopWatch from "./components/Stopwatch";
+import { GlobalStyle } from "./components/styled/GlobalStyle";
 import { codePegs } from "./variables/codePegs";
 
 const App = () => {
@@ -54,7 +55,7 @@ const App = () => {
   useEffect(() => {
     if (solutionCheck.exact === pegsInGame) {
       let solutionArr = []
-      for(let i=0; i<pegsInGame; i++){
+      for (let i = 0; i < pegsInGame; i++) {
         solutionArr.push([codePegs[solution[i]]])
       }
       setSolutionPegs(solutionArr)
@@ -64,7 +65,7 @@ const App = () => {
     }
     if (currentAttempt === attempts && solutionCheck.exact !== pegsInGame) {
       let solutionArr = []
-      for(let i=0; i<pegsInGame; i++){
+      for (let i = 0; i < pegsInGame; i++) {
         solutionArr.push([codePegs[solution[i]]])
       }
       setSolutionPegs(solutionArr)
@@ -72,11 +73,12 @@ const App = () => {
       stopStopwatch()
       setWin(false)
     }
-
   }, [currentAttempt, solution, solutionCheck, stopStopwatch, attempts, pegsInGame])
 
   return (
-    <div className="App">
+    <div className='app'>
+      <div className="bg"></div>
+      <GlobalStyle />
       {start ?
         <StartGame setPegsInGame={setPegsInGame} pegsInGame={pegsInGame} start={start} setSolution={setSolution} setAllSolutionChecks={setAllSolutionChecks} setCurrentAttempts={setCurrentAttempts} setSolutionCheck={setSolutionCheck} setPegs={setPegs} setStart={setStart} setSolutionPegs={setSolutionPegs} startStopwatch={startStopwatch} />
         :
@@ -86,12 +88,17 @@ const App = () => {
           <Reset setPegsInGame={setPegsInGame} pegsInGame={pegsInGame} reset={reset} setWin={setWin} setSolution={setSolution} setAllSolutionChecks={setAllSolutionChecks} setCurrentAttempts={setCurrentAttempts} setSolutionCheck={setSolutionCheck} setPegs={setPegs} setReset={setReset} setSolutionPegs={setSolutionPegs} startStopwatch={startStopwatch} />
           <CodePegs pegsInGame={pegsInGame} setAttempt={setAttempt} attempt={attempt} solution={solution} setAllSolutionChecks={setAllSolutionChecks} setPegs={setPegs} setCurrentAttempts={setCurrentAttempts} setSolutionCheck={setSolutionCheck} />
           <Solution solution={solution} currentAttempt={currentAttempt} solutionCheck={solutionCheck} setReset={setReset} setSolution={setSolution} solutionPegs={solutionPegs} setSolutionPegs={setSolutionPegs} stopStopwatch={stopStopwatch} />
-          <Attempts attempts={attempts} pegs={pegs} pegsInGame={pegsInGame} />
-          <KeyPegs attempts={attempts} allSolutionChecks={allSolutionChecks} />
+          <div className='game'>
+            <div className="atempts">
+              <Attempts attempts={attempts} pegs={pegs} pegsInGame={pegsInGame} />
+            </div>
+            <div className="key-pegs">
+              <KeyPegs attempts={attempts} allSolutionChecks={allSolutionChecks} />
+            </div>
+          </div>
         </>
       }
     </div>
-  );
+  )
 }
-
 export default App;
