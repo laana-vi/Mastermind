@@ -22,7 +22,7 @@ const Attempts = ({ pegs, attempts, pegsInGame }) => {
 
     return (
         <>
-            <StyledAttempts>
+            <StyledAttempts pegsInGame={pegsInGame}>
                 {showAttempts()}
             </StyledAttempts>
 

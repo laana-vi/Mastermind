@@ -4,6 +4,7 @@ export const StyledReset = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10 !important;
 
     .reset-button {
         font-family: 'Orbitron', sans-serif;

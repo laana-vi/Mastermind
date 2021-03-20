@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
 export const StyledKeyPegs = styled.div`
+align-self: flex-end;
     .key-pegs{
-        min-width: 350px;
+        min-width: ${({ pegsInGame }) => pegsInGame===3 ? '210px' : (pegsInGame===4 ? '280px' : '350px')};
         min-height: 75px;
         margin-left: 30px;
         margin-bottom:1px;
+        
     }
     .key-peg {
         width: 60px;

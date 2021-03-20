@@ -8,6 +8,7 @@ import StartGame from "./components/StartGame";
 import StopWatch from "./components/Stopwatch";
 import { GlobalStyle } from "./components/styled/GlobalStyle";
 import { codePegs } from "./variables/codePegs";
+import Confetti from 'react-confetti'
 
 const App = () => {
   const [solution, setSolution] = useState([])
@@ -82,13 +83,13 @@ const App = () => {
   return (
     <div className='app'>
       <div className="bg"></div>
-      <GlobalStyle />
+      <GlobalStyle win={win} />
       {start ?
         <StartGame setPegsInGame={setPegsInGame} pegsInGame={pegsInGame} start={start} setSolution={setSolution} setAllSolutionChecks={setAllSolutionChecks} setCurrentAttempts={setCurrentAttempts} setSolutionCheck={setSolutionCheck} setPegs={setPegs} setStart={setStart} setSolutionPegs={setSolutionPegs} startStopwatch={startStopwatch} />
         :
         <>
+        {win !== null && (win === true ? <Confetti></Confetti> :<></>)}
           <div className='game'>
-            {/* {win !== null && (win === true ? <p>GAME WON</p> : <p>GAME LOST</p>)} */}
             <Reset reset={reset} />
             <StopWatch time={time} />
             <Solution solution={solution} currentAttempt={currentAttempt} solutionCheck={solutionCheck} setReset={setReset} setSolution={setSolution} solutionPegs={solutionPegs} setSolutionPegs={setSolutionPegs} stopStopwatch={stopStopwatch} />
@@ -97,7 +98,7 @@ const App = () => {
                 <Attempts attempts={attempts} pegs={pegs} pegsInGame={pegsInGame} />
               </div>
               <div className="key-pegs">
-                <KeyPegs attempts={attempts} allSolutionChecks={allSolutionChecks} />
+                <KeyPegs pegsInGame={pegsInGame} attempts={attempts} allSolutionChecks={allSolutionChecks} />
               </div>
             </div>
             <CodePegs pegsInGame={pegsInGame} setAttempt={setAttempt} attempt={attempt} solution={solution} setAllSolutionChecks={setAllSolutionChecks} setPegs={setPegs} setCurrentAttempts={setCurrentAttempts} setSolutionCheck={setSolutionCheck} />

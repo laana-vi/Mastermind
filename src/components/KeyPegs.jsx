@@ -1,7 +1,7 @@
 import { keyPegs } from "../variables/keyPegs"
 import { StyledKeyPegs } from "./styled/StyledKeyPegs"
 
-const KeyPegs = ({ allSolutionChecks, attempts }) => {
+const KeyPegs = ({ allSolutionChecks, attempts, pegsInGame }) => {
     let key = 0
 
     const renderExact = (number) => {
@@ -34,7 +34,7 @@ const KeyPegs = ({ allSolutionChecks, attempts }) => {
 
     return (
         <>
-            <StyledKeyPegs>
+            <StyledKeyPegs pegsInGame={pegsInGame}>
                 {showKeyPegs()}
             </StyledKeyPegs>
 

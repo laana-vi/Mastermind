@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
 export const StyledAttempts = styled.div`
+align-self: flex-start;
     .attempt-pegs {
-        min-width: 350px;
+        min-width: ${({ pegsInGame }) => pegsInGame===3 ? '210px' : (pegsInGame===4 ? '280px' : '350px')};
         min-height: 75px;
         margin-right: 30px;
         margin-bottom:1px;
+       
     }
     .attempt-peg {
         width: 60px;

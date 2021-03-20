@@ -23,12 +23,10 @@ button:focus {
 .game {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 .pegs {
     display: flex;
     flex-direction: row;
-    justify-content: center
 }
 .bg {
   position: fixed;
@@ -38,12 +36,12 @@ button:focus {
   bottom: -50%;
   width: 200%;
   height: 200vh;
-  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background: transparent ${({ win }) => win===false ?  "url('https://res.cloudinary.com/dpj7zvqzs/image/upload/v1616247955/rain_hadhx5.png')" : "url('http://assets.iceable.com/img/noise-transparent.png')"} repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation .2s infinite;
   opacity: .9;
   visibility: visible;
-  z-index: -1;
+  z-index: ${({ win}) => win===false ? '1' : '-1'};
 }
 
 @keyframes bg-animation {
