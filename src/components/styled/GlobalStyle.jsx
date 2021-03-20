@@ -13,16 +13,12 @@ body {
 button:focus {
     outline: none;
 }
-.wrapper {
-    
-}
 .app {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
-   
 }
 .game {
     display: flex;
@@ -32,6 +28,7 @@ button:focus {
 .pegs {
     display: flex;
     flex-direction: row;
+    justify-content: center
 }
 .bg {
   position: fixed;

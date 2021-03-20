@@ -27,8 +27,8 @@ const KeyPegs = ({ allSolutionChecks, attempts }) => {
         }
         return attemptsArr.map(attempt =>
             <div className="key-pegs" key={attempt}>
-                {renderExact(allSolutionChecks[attempt]?.exact).map(pic => <img src={pic} alt="" key={key++} />)}
-                {renderWrongPlace(allSolutionChecks[attempt]?.wrongPlace).map(pic => <img src={pic} alt="" key={key++} />)}
+                {renderExact(allSolutionChecks[attempt]?.exact).map(pic => <img className='key-peg' src={pic} alt="" key={key++} />)}
+                {renderWrongPlace(allSolutionChecks[attempt]?.wrongPlace).map(pic => <img className='key-peg' src={pic} alt="" key={key++} />)}
             </div>)
     }
 

@@ -8,11 +8,16 @@ export const StyledCodePegs = styled.div`
         background: transparent;
         border:none;
         display: inline-block;
-         transform: translateZ(0);
+        transform: translateZ(0);
         transition-duration: 0.3s;
         transition-property: transform;
     }
     .code-peg-button:hover{
         transform: scale(1.1);
+    }
+    .code-peg {
+        width: 60px;
+        height: 60px;
+        margin: 5px
     }
 `

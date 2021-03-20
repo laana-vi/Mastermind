@@ -30,7 +30,7 @@ const CodePegs = ({ setAttempt, attempt, solution, setAllSolutionChecks, setPegs
         for (let i = 1; i <= pegsInGame + 1; i++) {
             visiblePegs.push(i)
         }
-        return visiblePegs.map(visiblePeg => <button className='code-peg-button' key={visiblePeg} onClick={() => { handleClick(visiblePeg) }}><img src={codePegs[visiblePeg]} alt="" /></button>
+        return visiblePegs.map(visiblePeg => <button className='code-peg-button' key={visiblePeg} onClick={() => { handleClick(visiblePeg) }}><img className='code-peg' src={codePegs[visiblePeg]} alt="" /></button>
         )
     }
     return (
@@ -38,7 +38,6 @@ const CodePegs = ({ setAttempt, attempt, solution, setAllSolutionChecks, setPegs
             <StyledCodePegs>
                 {renderPegs()}
             </StyledCodePegs>
-
         </div>
     )
 }

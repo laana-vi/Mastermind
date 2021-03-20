@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { StyledAttempts } from "./styled/StyledAttempts"
 
 const Attempts = ({ pegs, attempts, pegsInGame }) => {
     const [sliceStarts, setSliceStart] = useState([])
@@ -14,14 +15,17 @@ const Attempts = ({ pegs, attempts, pegsInGame }) => {
 
     const showAttempts = () => {
         return sliceStarts.map(slice =>
-            <div key={slice}>
-                {pegs?.slice(slice, slice + pegsInGame)?.map(pic => <img key={key++} src={pic} alt="" />)}
+            <div className="attempt-pegs" key={slice}>
+                {pegs?.slice(slice, slice + pegsInGame)?.map(pic => <img className="attempt-peg" key={key++} src={pic} alt="" />)}
             </div>)
     }
 
     return (
         <>
-            {showAttempts()}
+            <StyledAttempts>
+                {showAttempts()}
+            </StyledAttempts>
+
         </>
     )
 }

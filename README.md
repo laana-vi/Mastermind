@@ -8,8 +8,8 @@
 * add new game and reset - **done**
 * add scoreboard
 
-* make it dynamic
-* add three levels
+* make it dynamic - **done**
+* add three levels = **done**
 
 * statitics based on level, number of attempts and time
 
