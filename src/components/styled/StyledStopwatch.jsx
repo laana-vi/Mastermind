@@ -11,4 +11,19 @@ export const StyledStopwatch = styled.div`
     padding: 10px;
     border-bottom: 2px solid white;
 
+    @media screen and (max-width: 680px){
+        font-size: 1.6em;
+    }
+
+    @media screen and (max-width: 520px){
+        font-size: 1.3em;
+
+    }
+
+    @media screen and (max-width: 420px){
+        font-size: 1.1em;
+
+    }
+
+
 `
