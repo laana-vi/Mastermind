@@ -2,17 +2,17 @@ import styled from 'styled-components'
 
 export const StyledStopwatch = styled.div`
     display: flex;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
     justify-content: center;
     font-family: 'Fjalla One', sans-serif;
-    font-size: 2em;
+    font-size: 1.6em;
     letter-spacing: 0.5em;
     padding: 10px;
     border-bottom: 2px solid white;
 
     @media screen and (max-width: 680px){
-        font-size: 1.6em;
+        font-size: 1.4em;
     }
 
     @media screen and (max-width: 520px){

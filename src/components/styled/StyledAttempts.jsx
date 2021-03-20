@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 export const StyledAttempts = styled.div`
     .attempt-pegs {
-        min-width: 280px;
+        min-width: 350px;
         min-height: 75px;
         margin-right: 30px;
-        margin-bottom:5px;
+        margin-bottom:1px;
     }
     .attempt-peg {
         width: 60px;
@@ -14,7 +14,7 @@ export const StyledAttempts = styled.div`
     }
 
     
-    @media screen and (max-width: 680px){
+    @media screen and (max-width: 760px){
         .attempt-peg {
         width: 50px;
         height: 50px;
@@ -24,12 +24,12 @@ export const StyledAttempts = styled.div`
             min-width: 244px;
             min-height: 60px;
             margin-right: 10px;
-            margin-bottom:3px;
+            margin-bottom:2px;
         }
 
     }
 
-    @media screen and (max-width: 540px){
+    @media screen and (max-width: 590px){
         .attempt-peg {
             width: 40px;
             height: 40px;
@@ -44,7 +44,7 @@ export const StyledAttempts = styled.div`
 
     }
 
-    @media screen and (max-width: 420px){
+    @media screen and (max-width: 490px){
         .attempt-peg {
             width: 30px;
             height: 30px;
@@ -54,12 +54,12 @@ export const StyledAttempts = styled.div`
             min-width: 144px;
             min-height: 40px;
             margin-right: 10px;
-            margin-bottom:1px;
+            margin-bottom:2px;
         }
 
     }
 
-    @media screen and (max-width: 320px){
+    @media screen and (max-width: 340px){
         .attempt-peg {
             width: 25px;
             height: 25px;
@@ -84,7 +84,7 @@ export const StyledAttempts = styled.div`
             min-width: 108px;
             min-height: 31px;
             margin-right: 2px;
-            margin-bottom:1px;
+            margin-bottom:2px;
         }
 
     }

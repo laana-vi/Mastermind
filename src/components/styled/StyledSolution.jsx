@@ -4,7 +4,7 @@ export const StyledSolution = styled.div`
     .solution-pegs{
         display:flex;
         justify-content: center;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
     .solution-peg {
         width: 60px;

@@ -18,7 +18,6 @@ export const StyledStartGame = styled.div`
     font-weight: bolder;
     letter-spacing: 0.5em;
     font-size: 1.2em;
-    background-color: #ebe8e5;
     padding: 20px 50px 20px 50px;
     color: #272D2D;
     margin: 20px;
@@ -45,7 +44,6 @@ export const StyledStartGame = styled.div`
 }
 .levels button:nth-child(3){
     background-color: #d9d721;
-    
 }
 
 .logo {
@@ -53,6 +51,7 @@ export const StyledStartGame = styled.div`
     width: 600px;
     margin-top: 10px;
 }
+
 @media screen and (max-width: 620px){
     .logo{
         width: 400px;

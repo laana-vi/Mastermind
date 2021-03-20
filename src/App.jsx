@@ -88,9 +88,9 @@ const App = () => {
         :
         <>
           <div className='game'>
-            {win !== null && (win === true ? <p>GAME WON</p> : <p>GAME LOST</p>)}
-            <StopWatch time={time} />
+            {/* {win !== null && (win === true ? <p>GAME WON</p> : <p>GAME LOST</p>)} */}
             <Reset reset={reset} />
+            <StopWatch time={time} />
             <Solution solution={solution} currentAttempt={currentAttempt} solutionCheck={solutionCheck} setReset={setReset} setSolution={setSolution} solutionPegs={solutionPegs} setSolutionPegs={setSolutionPegs} stopStopwatch={stopStopwatch} />
             <div className="pegs">
               <div className="atempts">

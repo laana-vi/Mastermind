@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const StyledCodePegs = styled.div`
     display:flex;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 10px;
 
     .code-peg-button{
         background: transparent;
