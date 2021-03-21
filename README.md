@@ -2,6 +2,7 @@
 
 ## About
 *Mastermind game done in React.*
+See live [here](https://lana-mastermind-game.netlify.app/)
 
 | **LEVELS** | **CODEPEGS** | **ATTEMPTS** | **KEYPEGS** | **PEGS IN GAME** |
 | :--------: | :----------: | :----------: | :---------: | :--------------: |
